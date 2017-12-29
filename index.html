@@ -1,7 +1,7 @@
 <h1>Chaegami Wedding Photos</h1>
 <div id="weddingphotos">
 </div>
-<div id="next">Click to see more pictures!<br/>더 많은 사진을 보시려면 클릭!</div>
+<!-- <div id="next">Click to see more pictures!<br/>더 많은 사진을 보시려면 클릭!</div> -->
 
 <style>
   h1, #next {
@@ -31,19 +31,21 @@
 <script>
   const photoContainer = document.getElementById("weddingphotos");
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 34; i++) {
     const img = document.createElement("img");
-    img.setAttribute('src', `weddingphotos/wedding${i}.jpg`);
-    photoContainer.append(img);
+    img.setAttribute('src', `resizedweddingphotos/wedding${i}.jpg`);
+    setTimeout(function() {
+      photoContainer.append(img);
+    }, 1000);
   }
 
-  const next = document.getElementById("next");
-  next.onclick = function() {
-    const imgIndex = photoContainer.childNodes.length + 1;
-    for (var i = imgIndex; i < (imgIndex + 3); i++) {
-      const img = document.createElement("img");
-      img.setAttribute('src', `weddingphotos/wedding${i}.jpg`);
-      photoContainer.append(img);
-    }
-  }
+  // const next = document.getElementById("next");
+  // next.onclick = function() {
+  //   const imgIndex = photoContainer.childNodes.length + 1;
+  //   for (var i = imgIndex; i < (imgIndex + 3); i++) {
+  //     const img = document.createElement("img");
+  //     img.setAttribute('src', `resizedweddingphotos/wedding${i}.jpg`);
+  //     photoContainer.append(img);
+  //   }
+  // }
 </script>
