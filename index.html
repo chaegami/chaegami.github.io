@@ -1,18 +1,24 @@
 <h1>Chaegami Wedding Photos</h1>
 <div id="weddingphotos">
 </div>
+<div id="next">Click to see more pictures!</div>
 
 <style>
-  h1 {
+  h1, #next {
     font-family: "Helvetica Neue";
     text-align: center;
     margin: 50px auto;
+  }
+
+  #next {
+    font-size: 20px;
   }
 
   #weddingphotos {
     width: 800px;
     margin: 50px auto;
   }
+
   img {
     display: inline-block;
     margin-top: 40px;
@@ -22,12 +28,21 @@
   }
 </style>
 <script>
-  for (var i = 2; i < 36; i++) {
+  const photoContainer = document.getElementById("weddingphotos");
+
+  for (var i = 1; i < 4; i++) {
     const img = document.createElement("img");
     img.setAttribute('src', `weddingphotos/wedding${i}.jpg`);
-    console.log(img)
-    setTimeout(function() {
-      document.getElementById("weddingphotos").append(img);
-    }, 1000);
+    photoContainer.append(img);
+  }
+
+  const next = document.getElementById("next");
+  next.onclick = function() {
+    const imgIndex = photoContainer.childNodes.length + 1;
+    for (var i = imgIndex; i < (imgIndex + 3); i++) {
+      const img = document.createElement("img");
+      img.setAttribute('src', `weddingphotos/wedding${i}.jpg`);
+      photoContainer.append(img);
+    }
   }
 </script>
