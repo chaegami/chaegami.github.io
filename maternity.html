@@ -1,0 +1,56 @@
+<h1>Cha & Egami</h1>
+<div class="navbar">
+  <a href="index.html" id="wedding">Wedding</a>
+  <a href="maternity.html" id="maternity">Maternity</a>
+  <a href="family.html" id="family">Family</a>
+</div>
+<div id="photos">
+</div>
+
+<style>
+  h1, #next, .navbar {
+    font-family: "Helvetica Neue";
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  #next, #wedding, #maternity, #family {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  #wedding, #maternity, #family {
+    margin: 10px;
+    display: inline-block;
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  #maternity {
+    color: black;
+  }
+
+  #photos {
+    width: 800px;
+    margin: 50px auto;
+  }
+
+  img {
+    display: inline-block;
+    margin-top: 40px;
+    width: 800px;
+    height: auto;
+    vertical-align: top;
+  }
+</style>
+<script>
+  const photoContainer = document.getElementById("photos");
+
+  for (var i = 0; i < 35; i++) {
+    const img = document.createElement("img");
+    img.setAttribute('src', `resizedmaternityphotos/maternity${i}.jpg`);
+    setTimeout(function() {
+      photoContainer.append(img);
+    }, 1000);
+  }
+</script>
