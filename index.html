@@ -1,1 +1,33 @@
-Hello World
+<h1>Chaegami Wedding Photos</h1>
+<div id="weddingphotos">
+</div>
+
+<style>
+  h1 {
+    font-family: "Helvetica Neue";
+    text-align: center;
+    margin: 50px;
+  }
+
+  #weddingphotos {
+    width: 900px;
+    margin: 50px auto;
+  }
+  img {
+    display: inline-block;
+    margin: 20px;
+    width: 800px;
+    height: auto;
+    vertical-align: top;
+  }
+</style>
+<script>
+  for (var i = 1; i < 36; i++) {
+    const img = document.createElement("img");
+    img.setAttribute('src', `weddingphotos/wedding${i}.jpg`);
+    console.log(img)
+    setTimeout(function() {
+      document.getElementById("weddingphotos").append(img);
+    }, 1000);
+  }
+</script>
